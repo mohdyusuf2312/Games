@@ -1,14 +1,31 @@
 import random
 import sys
 from logo import logo
+import os
 
-print(logo)
-print("Welcome to the unbeatable Tic Tac Toe")
-print("The board's index values are: ")
-print("0|1|2")
-print("3|4|5")
-print("6|7|8")
-print("Enter your move, 0 through 8. (You are X's and AI is O's) ")
+def clear_console():
+    # For Windows
+    if os.name == 'nt':
+        _ = os.system('cls')
+    # For Unix-like systems (Linux, macOS)
+    else:
+        _ = os.system('clear')
+
+def start():
+    print("Welcome to the unbeatable Tic Tac Toe")
+    print("The board's index values are: ")
+    print(logo)
+    # print("0|1|2")
+    # print("3|4|5")
+    # print("6|7|8")
+    # print("You are X's and AI is O's ")
+    want = input("Do you want to start? Type 'Y' for yes and 'E' for exit : ").lower()
+    if want == "y":
+        print_board(turn, board, aiturn)
+    elif want == "e":
+        end()
+    else:
+        print("Invalid input")
 
 board = ["_","_","_","_","_","_"," "," "," "] #Board horizontal and vertical lines
 pairs = ([0,3,6],[1,4,7],[2,5,8],[0,1,2],[3,4,5],[6,7,8],[0,4,8],[2,4,6]) #Win Pairs
@@ -19,6 +36,8 @@ turn = "PLAYER"
 aiturn = 0 #number of turn of ai
 
 def print_board(turn, board, aiturn): #to print the board and start the next turn
+    clear_console()
+    print(logo)
     print(board[0] + "|" + board[1] + "|" + board[2])
     print(board[3] + "|" + board[4] + "|" + board[5])
     print(board[6] + "|" + board[7] + "|" + board[8])
@@ -72,7 +91,9 @@ def check_win(turn, board, aiturn):
     print_board(turn, board, aiturn)
 
 def end(): #To end the game and print final board
-    print ("Here is the final board.")
+    clear_console()
+    print(logo)
+    print ("Thank you! Here is the final board.")
     print (board[0] + "|" + board[1] + "|" + board[2])
     print (board[3] + "|" + board[4] + "|" + board[5])
     print (board[6] + "|" + board[7] + "|" + board[8])
@@ -152,4 +173,5 @@ def ai_move(turn, board, aiturn, corner):
     turn = "PLAYER"
     check_win(turn , board, aiturn)
 
-print_board(turn, board, aiturn)
+# print_board(turn, board, aiturn)
+start()
