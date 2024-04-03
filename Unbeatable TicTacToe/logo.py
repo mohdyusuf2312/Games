@@ -14,9 +14,13 @@ YSSS~S%SSSSSP  .SS   d%%SP        YSSS~S%SSSSSP  .SS~SSSSS    d%%SP        YSSS~
      SP        SP                      SP               SP                      SP                               
      Y         Y                       Y                Y                       Y                                
 
+'''
+instruction = '''
+Welcome to the unbeatable Tic Tac Toe
 The board's index values are: 
 0|1|2
 3|4|5
 6|7|8
 You are X's and AI is O's - 
+
 '''
