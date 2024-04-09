@@ -45,6 +45,8 @@ def easy():
             print("Too high! guess again.")
             remian -= 1
             continue
+    if remian == 0:
+        print(f"The number was {number}")
 
 # hard = 5
 def hard():
@@ -63,5 +65,7 @@ def hard():
             print("Too high! guess again.")
             remian -= 1
             continue
+    if remian == 0:
+        print(f"The number was {number}")
 
 start()
